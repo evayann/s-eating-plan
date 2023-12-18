@@ -13,10 +13,15 @@ export function addPerson(name: string): void {
     personList.update((personList) => [...personList, { id: ++personIdGenerator, name}])
 }
 
-export function deletePersonByName(name: string): void {
-    personList.update((personList) => personList.filter(person => person.name === name));
+export function changePersonName(personId: number, newName: string): void {
+    personList.update((personList) => personList.map(person => person.id === personId ? {...person, name: newName} : person));
 }
 
-export function deletePersonById(id: number): void {
-    personList.update((personList) => personList.filter(person => person.id === id));
+export function deletePersonById(personId: number): void {
+    personList.update((personList) => personList.filter(person => person.id !== personId));
 }
+
+addPerson('test')
+addPerson('test1')
+addPerson('test2')
+addPerson('test')

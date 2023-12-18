@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+
+    --primary: #996F45;
+    --secondary: #007397;
+
+    --text-primary: white;
+    --text-secondary: white;
+
+    --gap-1: 5px;
+    --gap-2: 10px;
+    --gap-3: 15px;
+    --gap-4: 20px; 
+    --gap-5: 40px;
+
+    --fs-1: 16px;
+    --fs-2: 20px;
+    --fs-3: 24px;
+
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button {
+    --color: var(--text-primary);
+    --background-color: var(--primary);
+    --hover-background-color: color-mix(in srgb, var(--primary), black);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--color);
+    background-color: var(--background-color);
+    
+    border: 0;
+    border-radius: 12px;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--hover-background-color);
+}
+
+button.invisible {
+    --color: var(--primary);
+    --background-color: transparent;
+    --hover-background-color: rgb(182, 182, 182);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    /* Write style for text secondary here  */
+    color: var(--secondary);
+}
+
+.text-shadow {
+    text-shadow: var(--shadow);
+}
+
+.font-title {
+    font-family: Audiowide;
+    font-size: var(--fs-3);
+}
