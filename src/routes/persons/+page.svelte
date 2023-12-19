@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { personList, deletePersonById, changePersonName } from '../../stores/person.store';
+    import { personList, deletePersonById, changePersonName, addPerson } from '../../stores/person.store';
 	import PersonIcon from '../../lib/components/PersonIcon.svelte';
 	import Person from './Person.svelte';
 </script>
@@ -14,8 +14,12 @@
 </div>
 
 <div class="person-list">
-    <!-- <Person {person} on:trashClicked={() => deletePersonById(person.id)} on:nameChanged={(event) => changePersonName(person.id, event.detail.newName)}/> -->
+	{#each $personList as person}
+		<Person {person} on:nameChanged={(event) => changePersonName(person.id, event.detail.newName)} on:trashClicked={() => deletePersonById(person.id)}></Person>
+	{/each}
 </div>
+
+<button class="font-title" on:click={() => addPerson('Nouvelle personne')}> Ajouter un convive </button>
 
 <style>
 	.person-list-header {
@@ -24,7 +28,7 @@
 		justify-content: center;
 	}
 
-	.person-list {
+	.person-list { 
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap-3);

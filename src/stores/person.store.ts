@@ -20,8 +20,3 @@ export function changePersonName(personId: number, newName: string): void {
 export function deletePersonById(personId: number): void {
     personList.update((personList) => personList.filter(person => person.id !== personId));
 }
-
-addPerson('test')
-addPerson('test1')
-addPerson('test2')
-addPerson('test')

@@ -5,7 +5,7 @@
 
 	export let person: Person;
 
-    const dispatch = createEventDispatcher();
+    const dispatch = createEventDispatcher<{nameChanged: {newName: string}, trashClicked: number}>();
 
     function nameChanged(input: HTMLInputElement): void {
         const newName = input.value;
