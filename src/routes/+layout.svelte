@@ -1,6 +1,6 @@
 <script>
+    import '../lib/styles/fonts.css';
     import '../app.css';
-    import '../fonts.css';
 </script>
 
 <svelte:head>

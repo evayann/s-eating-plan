@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-	import TrashIcon from '../../lib/TrashIcon.svelte';
+	import TrashIcon from '../../lib/components/TrashIcon.svelte';
 	import type { Table } from '../../stores/table.store';
 
 	export let table: Table;

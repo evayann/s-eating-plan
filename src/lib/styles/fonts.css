@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Audiowide';
+    /* font-style: normal;
+    font-weight: 500; */
+    src: url('$lib/fonts/AudioWide-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GothicA1';
+    /* font-style: normal;
+    font-weight: 500; */
+    src: url('$lib/fonts/gothic/GothicA1-Black.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Bold.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-ExtraBold.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-ExtraLight.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Light.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Medium.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Regular.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Light.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-SemiBold.ttf') format('truetype'),
+            url('$lib/fonts/gothic/GothicA1-Thin.ttf') format('truetype');
+}
