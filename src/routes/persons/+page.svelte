@@ -2,37 +2,31 @@
     import { personList, deletePersonById, changePersonName, addPerson } from '../../stores/person.store';
 	import PersonIcon from '../../lib/components/PersonIcon.svelte';
 	import Person from './Person.svelte';
+	import List from '../List.svelte';
 </script>
 
 <svelte:head>
     <title> Les Personnes </title>
 </svelte:head>
 
-<div class="person-list-header text-secondary text-shadow">
-    <PersonIcon class="person-icon"/>
-	<p>Liste des convives</p>
-</div>
+<List>
+    <div slot="title" class="person-list-header text-secondary text-shadow">
+        <PersonIcon class="person-icon"/>
+        <h1>Liste des convives</h1>
+    </div>
+    <div slot="list">
+        {#each $personList as person}
+            <Person {person} on:nameChanged={(event) => changePersonName(person.id, event.detail.newName)} on:trashClicked={() => deletePersonById(person.id)}></Person>
+        {/each}
+    </div>
+    <button slot="add" class="font-title" on:click={() => addPerson()}> Ajouter un convive </button>
+</List>
 
-<div class="person-list">
-	{#each $personList as person}
-		<Person {person} on:nameChanged={(event) => changePersonName(person.id, event.detail.newName)} on:trashClicked={() => deletePersonById(person.id)}></Person>
-	{/each}
-</div>
 
-<button class="font-title" on:click={() => addPerson('Nouvelle personne')}> Ajouter un convive </button>
-<a href="/plan" class="font-title"> Générer le plan </a>
-
-<style>
-	.person-list-header {
+<style>	
+    .person-list-header {
 		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.person-list { 
-		display: flex;
-		flex-direction: column;
-		gap: var(--gap-3);
+        flex-direction: row;
 	}
 
     :global(.person-icon) {

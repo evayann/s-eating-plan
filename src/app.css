@@ -56,7 +56,6 @@ button.invisible {
 }
 
 .text-secondary {
-    /* Write style for text secondary here  */
     color: var(--secondary);
 }
 

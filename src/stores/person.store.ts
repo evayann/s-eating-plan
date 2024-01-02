@@ -9,8 +9,10 @@ export type Person = {
 let personIdGenerator = 0;
 export const personList: Writable<Person[]> = writable([]);
 
-export function addPerson(name: string): void {
-    personList.update((personList) => [...personList, { id: ++personIdGenerator, name}])
+export function addPerson(personName?: string): void {
+    const id = ++personIdGenerator;
+    const name = personName ?? `Person ${id}`; 
+    personList.update((personList) => [...personList, { id, name}])
 }
 
 export function changePersonName(personId: number, newName: string): void {

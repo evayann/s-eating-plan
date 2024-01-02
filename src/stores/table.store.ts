@@ -23,6 +23,3 @@ export function addSitToTable(tableId: number): void {
 export function removeSitToTable(tableId: number): void {
     tableList.update(tableList => tableList.map(table => table.id === tableId ? { ...table, numberOfSit: Math.max(table.numberOfSit - 1, 0) } : table));
 }
-
-addTable(5)
-addTable(4)

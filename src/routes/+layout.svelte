@@ -17,7 +17,9 @@
     </div>
     
     <div class="page">
-        <slot/>
+        <div class="page-content">
+            <slot/>
+        </div>
     </div>
 </div>
 
@@ -45,6 +47,11 @@
     .banner > a {
         color: white;
         text-decoration: none;
+        transition: opacity 0.7s;
+    }
+
+    .banner > a:hover {
+        opacity: 0.7;
     }
 
     .banner > hr {
@@ -54,6 +61,14 @@
 
     .page {
         flex-grow: 2;
+        width: 100%;
+    }
+
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         padding: var(--gap-4);
     }
 </style>
