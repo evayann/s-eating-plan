@@ -13,7 +13,7 @@ export function addTable(numberOfSit: number): void {
 }
 
 export function deleteTableById(id: number): void {
-    tableList.update((tableList) => tableList.filter(table => table.id === id));
+    tableList.update((tableList) => tableList.filter(table => table.id !== id));
 }
 
 export function addSitToTable(tableId: number): void {

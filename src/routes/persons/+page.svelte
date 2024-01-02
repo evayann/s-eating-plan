@@ -20,6 +20,7 @@
 </div>
 
 <button class="font-title" on:click={() => addPerson('Nouvelle personne')}> Ajouter un convive </button>
+<a href="/plan" class="font-title"> Générer le plan </a>
 
 <style>
 	.person-list-header {
